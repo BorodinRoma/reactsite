@@ -1,26 +1,33 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import {Header} from './components/App/Header';
+import {Footer} from './components/App/Footer';
+import {Price} from './views/Price';
+import {Home} from './views/Home';
+//import {Login} from './views'
 
+import {Routes, Route, BrowserRouter} from "react-router-dom";
+import Contacts from "./views/feedback/Contacts";
+
+const App = () => {
+    return (
+        <BrowserRouter>
+            <body>
+            <div className="Body">
+                <Header/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/Price" element={<Price/>}/>
+                    <Route path="/feedback" element={<Contacts/>}/>
+                </Routes>
+                <Footer/>
+            </div>
+            </body>
+        </BrowserRouter>
+    )
+}
 export default App;
+
+

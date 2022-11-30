@@ -1,0 +1,10 @@
+.navbar-brand>img {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
